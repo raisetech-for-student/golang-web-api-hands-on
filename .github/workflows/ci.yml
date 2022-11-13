@@ -1,0 +1,15 @@
+name: Run CI
+
+on:
+  pull_request:
+
+jobs:
+
+  lint:
+    name: "lint"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run Lint
+      uses: reviewdog/action-golangci-lint@v2
