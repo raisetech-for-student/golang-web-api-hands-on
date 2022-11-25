@@ -7,7 +7,7 @@ GoによるRESTful API作成を始めるためのガイドプロジェクトで�
 もし名前も聞いたことがないということであれば先にこれらを学習しましょう。
 - Go以外でWebのAPIを自作したことがある
 - GitやGitHubを利用してリポジトリを作成したり、Pull Requestを作成したことがある
-- Docker、Docker Composeを利用してMySQLなどのミドルウェアやRESTful APIを構築したことがある
+- Docker、Docker Composeを利用してMySQLなどのミドルウェアやRESTful APIのWebサーバーを構築したことがある
 
 # 前提条件
 - Goをインストールしていること
