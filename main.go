@@ -4,8 +4,6 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/go-chi/render"
-
 	"dependency-injection-sample/handler"
 	"dependency-injection-sample/infra/dao"
 	"dependency-injection-sample/usecase"
@@ -19,10 +17,8 @@ func main() {
 	bookUseCase := usecase.NewBook(bookRepo)
 	bookHandler := handler.NewBookHandler(bookUseCase)
 
-	r.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
-		render.JSON(w, r, map[string]string{
-			"message": "hello world",
-		})
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("hello world"))
 	})
 	r.Get("/message", messageHandler.Get)
 	r.Route("/api/v1", func(r chi.Router) {
