@@ -9,7 +9,7 @@ GoによるRESTful API作成を始めるためのガイドプロジェクトで�
 
 - Go以外でWebのAPIを自作したことがある
 - GitやGitHubを利用してリポジトリを作成したり、Pull Requestを作成したことがある
-- Docker、Docker Composeを利用してMySQLなどのミドルウェアやRESTful APIを構築したことがある
+- Docker、Docker Composeを利用してMySQLなどのミドルウェアやRESTful APIのWebサーバーを構築したことがある
 
 # 前提条件
 
@@ -31,43 +31,41 @@ GoによるRESTful API作成を始めるためのガイドプロジェクトで�
 まずはこのハンズオンのリポジトリをforkしてください。  
 forkできましたら、ご自身のローカルPCにcloneしてエディタでプロジェクトを開いてください。
 
-参考: <https://docs.github.com/ja/get-started/quickstart/fork-a-repo>  
+参考: https://docs.github.com/ja/get-started/quickstart/fork-a-repo
 
-# このプロジェクトについて
-
-## アプリケーションの構成
+# アプリケーションの構成
 
 オニオンアーキテクチャを意識した作りになっています。  
 各レイヤーの依存関係は下記を守っています。  
 handler --> usecase --> domain <-- infra
 
-### main.go
+## main.go
 
 エントリーポイントです。  
 Dockerを使わず、エディタからアプリケーションを起動する場合にはこのファイルから起動できます。  
 
-### handler
+## handler
 
 HTTPリクエストをハンドリングします。  
 
-### domain
+## domain
 
 ビジネスロジックに関連する状態や振る舞いを担うEntityやRepositoryなどを記述します。  
 
-### usecase
+## usecase
 
 domain層が公開する関数を組み合わせてユースケースを実現します。  
 
-### infra
+## infra
 
 データベースなどのStorageや外部APIとのやり取りを行います。  
 ただし、このハンズオンではデータベースとのやり取りは実装しておらず、下記のように仮の実装をしています。  
 
 <https://github.com/raisetech-for-student/golang-web-api-hands-on/blob/5edba42f463dea02ce1c482e78872d398361902f/infra/dao/book.go#L14-L29>  
 
-## 利用しているライブラリやフレームワークについて
+# 利用しているライブラリやフレームワークについて
 
-### go-chi/chiおよびgo-chi/render
+## go-chi/chiおよびgo-chi/render
 
 <https://github.com/go-chi/chi>  
 <https://github.com/go-chi/render>  
@@ -75,23 +73,31 @@ domain層が公開する関数を組み合わせてユースケースを実現�
 HTTPリクエストをハンドリングすることができます。  
 Goはnet/httpというHTTPクライアントとサーバーの実装を提供していますが、筆者が個人的にgo-chiに興味があるので採用しています。  
 
-### cosmtrek/air
+## cosmtrek/air
 
 <https://github.com/cosmtrek/air>  
 
 Live Reloadを実現するために導入しています。  
 
-### mvdan/gofumpt
+## mvdan/gofumpt
 
 <https://github.com/mvdan/gofumpt>  
 
 Goのstandard libraryの1つである`gofmt`よりも厳密にフォーマットするために導入しています。  
 
-### golangci/golangci-lint
+## golangci/golangci-lint
 
 <https://github.com/golangci/golangci-lint>  
 
-Star数も多く、Go界隈で人気のLinterです。  
+Star数も多く、Go界隈で人気のLinterです。
+
+# CIについて
+
+GitHub ActionsによるCIを導入しています。  
+Pull Request作成時にgolangci-lintを実行してエラーがあればマージできないようにしています。
+
+参考となるようにPull Requestを作成しています。  
+https://github.com/raisetech-for-student/golang-web-api-hands-on/pull/1  
 
 # 起動手順
 
@@ -128,6 +134,12 @@ golang-web-api-hands-on  | running...
 % curl http://localhost:8080/hello   
 {"message":"hello world"}
 ```
+
+# Makefileについて
+
+Makefileを使い、`make lint`でlint、`make fmt`でフォーマットをローカルで実行できるようにしています。
+ただ、`docker compose up`でコンテナが起動していることが前提になります。
+
 
 # /api/v1/booksにリクエストしてみましょう
 
