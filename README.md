@@ -1,3 +1,4 @@
+CI TEST
 # 概要
 GoによるRESTful API作成を始めるためのガイドプロジェクトです。
 
