@@ -6,9 +6,10 @@ import (
 
 	"github.com/go-chi/render"
 
-	"dependency-injection-sample/handler"
-	"dependency-injection-sample/infra/dao"
-	"dependency-injection-sample/usecase"
+	"golang-web-api-hands-on/handler"
+	"golang-web-api-hands-on/infra/dao"
+	"golang-web-api-hands-on/usecase"
+
 	"github.com/go-chi/chi/v5"
 )
 

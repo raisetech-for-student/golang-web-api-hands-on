@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"dependency-injection-sample/domain/model"
-	"dependency-injection-sample/domain/repository"
+	"golang-web-api-hands-on/domain/model"
+	"golang-web-api-hands-on/domain/repository"
 )
 
 type bookRepository struct{}
