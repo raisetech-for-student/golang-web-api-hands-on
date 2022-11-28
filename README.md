@@ -89,8 +89,7 @@ Live Reloadを実現するために導入しています。
 Goのstandard libraryの1つである`gofmt`よりも厳密にフォーマットするために導入しています。  
 
 ## golangci/golangci-lint
-
-<https://github.com/golangci/golangci-lint>  
+<https://github.com/golangci/golangci-lint>
 
 Star数も多く、Go界隈で人気のLinterです。
 
@@ -100,7 +99,9 @@ GitHub ActionsによるCIを導入しています。
 Pull Request作成時にgolangci-lintを実行してエラーがあればマージできないようにしています。
 
 参考となるようにPull Requestを作成しています。  
-<https://github.com/raisetech-for-student/golang-web-api-hands-on/pull/1>  
+
+https://github.com/raisetech-for-student/golang-web-api-hands-on/pull/1  
+
 
 # 起動手順
 
