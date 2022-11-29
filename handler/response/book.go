@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"dependency-injection-sample/domain/model"
+	"golang-web-api-hands-on/domain/model"
 )
 
 type Book struct {

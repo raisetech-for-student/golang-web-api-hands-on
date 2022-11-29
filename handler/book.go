@@ -3,8 +3,9 @@ package handler
 import (
 	"net/http"
 
-	"dependency-injection-sample/handler/response"
-	"dependency-injection-sample/usecase"
+	"golang-web-api-hands-on/handler/response"
+	"golang-web-api-hands-on/usecase"
+
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/render"
 )

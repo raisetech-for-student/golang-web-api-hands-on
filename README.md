@@ -89,6 +89,7 @@ Live Reloadを実現するために導入しています。
 Goのstandard libraryの1つである`gofmt`よりも厳密にフォーマットするために導入しています。  
 
 ## golangci/golangci-lint
+
 <https://github.com/golangci/golangci-lint>
 
 Star数も多く、Go界隈で人気のLinterです。
@@ -108,7 +109,7 @@ https://github.com/raisetech-for-student/golang-web-api-hands-on/pull/1
 ```
 % docker compose up
 [+] Running 1/1
- ⠿ Container dependency-injection-sample-app-1  Recreated                                                                                                                                                                          0.1s
+ ⠿ Container golang-web-api-hands-on-app-1  Recreated                                                                                                                                                                          0.1s
 Attaching to golang-web-api-hands-on
 golang-web-api-hands-on  | 
 golang-web-api-hands-on  |   __    _   ___  

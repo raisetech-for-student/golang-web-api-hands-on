@@ -1,4 +1,4 @@
-module dependency-injection-sample
+module golang-web-api-hands-on
 
 go 1.19
 
