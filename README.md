@@ -20,6 +20,9 @@ GoによるRESTful API作成を始めるためのガイドプロジェクトで�
 - なんからのIDEをインストールしていること
   - Visual Studio CodeやGoLandなど
 - curlやPostmanなどのHTTPクライアントを使ったことがある
+- Windowsの場合：Makeをインストールしていること
+  - Windowsではデフォルトでmakeコマンドを使用することができないため
+  - インストール手順参考: <https://zenn.dev/genki86web/articles/6e61c167fbe926>
 
 # ハンズオンをすすめるにあたって
 
@@ -31,7 +34,7 @@ GoによるRESTful API作成を始めるためのガイドプロジェクトで�
 まずはこのハンズオンのリポジトリをforkしてください。  
 forkできましたら、ご自身のローカルPCにcloneしてエディタでプロジェクトを開いてください。
 
-参考: https://docs.github.com/ja/get-started/quickstart/fork-a-repo
+参考: <https://docs.github.com/ja/get-started/quickstart/fork-a-repo>
 
 # アプリケーションの構成
 
@@ -87,7 +90,7 @@ Goのstandard libraryの1つである`gofmt`よりも厳密にフォーマット
 
 ## golangci/golangci-lint
 
-<https://github.com/golangci/golangci-lint>  
+<https://github.com/golangci/golangci-lint>
 
 Star数も多く、Go界隈で人気のLinterです。
 
@@ -97,7 +100,9 @@ GitHub ActionsによるCIを導入しています。
 Pull Request作成時にgolangci-lintを実行してエラーがあればマージできないようにしています。
 
 参考となるようにPull Requestを作成しています。  
+
 https://github.com/raisetech-for-student/golang-web-api-hands-on/pull/1  
+
 
 # 起動手順
 
@@ -139,7 +144,6 @@ golang-web-api-hands-on  | running...
 
 Makefileを使い、`make lint`でlint、`make fmt`でフォーマットをローカルで実行できるようにしています。
 ただ、`docker compose up`でコンテナが起動していることが前提になります。
-
 
 # /api/v1/booksにリクエストしてみましょう
 
